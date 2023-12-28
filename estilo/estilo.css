@@ -1,0 +1,51 @@
+@charset "utf-8";
+/* CSS Document */
+
+#menu {
+	z-index: 1;
+}
+a:hover {
+	font-weight: bold;
+}
+.td {
+	background-color: #FFFBEC;
+	font-family: Tahoma;
+	font-size: 12px;
+}
+.small_derecha {
+	font-family: Tahoma;
+	font-size: 12px;
+	color: #0000FF;
+	text-align: right;
+}
+
+.td:hover {
+	font-family: Tahoma;
+	font-size: 12px;
+	background-color: #FFFFCC;
+}
+.td2 {
+	background-color: #EAEAFF;
+	font-family: Tahoma;
+	font-size: 12px;
+}
+.td2:hover {
+	background-color: #9999FF;
+	font-family: Tahoma;
+	color: #FFFF80;
+}
+.small {
+	font-family: Tahoma;
+	font-size: 12px;
+	color: #0000FF;
+}
+.td3 {
+	background-color: #EAEAFF;
+	font-family: Tahoma;
+	font-size: 12px;
+}
+.td3:hover {
+	background-color: #EAEAFF;
+	font-family: Tahoma;
+	font-size: 12px;
+}
