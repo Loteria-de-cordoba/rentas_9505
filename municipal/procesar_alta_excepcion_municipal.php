@@ -2,9 +2,9 @@
 include ("../db_conecta_adodb.inc.php");
 include ("../funcion.inc.php");
 
-print_r($_POST);
+//print_r($_POST);
 //die();
-// $db->debug=true;
+//$db->debug=true;
 // die();
 //$id_provincia = $_POST['id_provincia'];
 //die('iiiiiiiii');
@@ -21,15 +21,17 @@ try{
 	$rs = $db->Execute("select e.id_localidad
 							   from IMPUESTOS.t_excepcion_municipal_kz e 
 							   where e.id_localidad = $localidad
-							   and e.periodo = $periodo");
+							   and e.periodo = $periodo
+							   AND e.aplica_desde= to_date('$fecha_desde','dd/mm/yyyy')");
 	}
 	catch(exception $e){die($db->ErrorMsg());
 	}
 
 try{	
-	$rs_1 = $db->Execute("Select max(periodo) as periodo_maximo
+	$rs_1 = $db->Execute("Select nvl(max(periodo),0) as periodo_maximo
 						From Impuestos.T_Excepcion_Municipal_Kz
-						where id_localidad= $localidad");
+						where id_localidad= $localidad
+						AND aplica_desde= to_date('$fecha_desde','dd/mm/yyyy')");
 }
 	catch(exception $e){die($db->ErrorMsg());
 }
